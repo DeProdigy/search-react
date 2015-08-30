@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20150827015548) do
   create_table "songs", force: true do |t|
     t.string  "title"
     t.integer "album_id"
+    t.integer "artist_id"
   end
 
   add_index "songs", ["album_id"], name: "index_songs_on_album_id", using: :btree
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
 
 end

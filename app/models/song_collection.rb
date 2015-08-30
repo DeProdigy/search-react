@@ -7,7 +7,7 @@ class SongCollection
   end
 
   def songs
-    Song.where("title ilike ?", "%#{query}%")
+    Song.includes(:album, :artist).where("title ilike ?", "%#{query}%")
   end
 
 end

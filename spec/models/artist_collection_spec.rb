@@ -7,7 +7,9 @@ RSpec.describe ArtistCollection, type: :model do
   describe '#songs' do
     context 'when artists do not exist' do
       before do
-        expect(Artist).to receive(:where).with("name ilike ?", "%#{query}%").and_return([])
+        ar_model = double
+        expect(Artist).to receive(:includes).with(:songs, :albums).and_return(ar_model)
+        expect(ar_model).to receive(:where).with("name ilike ?", "%#{query}%").and_return([])
       end
 
       it 'returns an empty array' do
@@ -20,7 +22,9 @@ RSpec.describe ArtistCollection, type: :model do
       let(:songs) { build_list(:song, 5) }
 
       before do
-        expect(Artist).to receive(:where).with("name ilike ?", "%#{query}%").and_return([artist])
+        ar_model = double
+        expect(Artist).to receive(:includes).with(:songs, :albums).and_return(ar_model)
+        expect(ar_model).to receive(:where).with("name ilike ?", "%#{query}%").and_return([artist])
         expect_any_instance_of(Artist).to receive(:songs).and_return(songs)
       end
 

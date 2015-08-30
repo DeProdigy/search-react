@@ -14,7 +14,7 @@ class ArtistCollection
 
 
     def artists
-      @artists ||= Artist.where("name ilike ?", "%#{query}%")
+      @artists ||= Artist.includes(:songs, :albums).where("name ilike ?", "%#{query}%")
     end
 
 end
