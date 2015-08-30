@@ -1,4 +1,5 @@
 @Results = React.createClass
+
   getDefaultProps: ->
     results: []
 
@@ -15,9 +16,10 @@
   render: ->
     React.DOM.div
       className: 'container'
-      React.DOM.div null,
-        React.DOM.h1
-          className: 'title'
-          'Hello'
-        React.createElement Search, populateResults: @populateResults
+      React.DOM.h1
+        className: 'title'
+        'Welcome to database search'
+      React.createElement Search, populateResults: @populateResults
+      React.DOM.div
+        className: 'results row'
         @renderResults @state.results
