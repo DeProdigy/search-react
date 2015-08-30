@@ -1,6 +1,15 @@
 class SearchController < ApplicationController
+
   def index
-    results = PgSearch.multisearch(params[:query])
-    render json: results
+    @songs = Results.new(search_params).songs
+
+    render json: @songs, each_serializer: SongSerializer
   end
+
+  private
+
+    def search_params
+      params[:query] || ''
+    end
+
 end

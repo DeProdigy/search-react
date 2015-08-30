@@ -6,4 +6,4 @@
     React.DOM.div null,
       React.DOM.h3
         className: 'result-content'
-        @props.result.content
+        @props.result.title

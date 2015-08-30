@@ -11,7 +11,7 @@
       url: "/search/?query=#{input}"
       dataType: 'JSON'
       success: (data) =>
-        @props.populateResults data
+        @props.populateResults data.search
       error: (data) =>
         alert("Well that didn't work as expected")
 

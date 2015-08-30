@@ -14,6 +14,8 @@ GEM
       activesupport (= 4.1.7)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activemodel (4.1.7)
       activesupport (= 4.1.7)
       builder (~> 3.1)
@@ -38,8 +40,14 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     connection_pool (2.2.0)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
     haml (4.0.7)
@@ -74,10 +82,6 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
-    pg_search (1.0.4)
-      activerecord (>= 3.1)
-      activesupport (>= 3.1)
-      arel
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -111,6 +115,23 @@ GEM
       rails (>= 3.1)
       react-source (~> 0.13)
     react-source (0.13.3)
+    rspec-core (3.2.3)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.0)
+      actionpack (>= 3.0, <= 4.2)
+      activesupport (>= 3.0, <= 4.2)
+      railties (>= 3.0, <= 4.2)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.2)
     ruby_parser (3.7.1)
       sexp_processor (~> 4.1)
     sass (3.2.19)
@@ -149,16 +170,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   coffee-rails (~> 4.0.0)
+  factory_girl_rails
   faker
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
   pg
-  pg_search
   pry-rails
   rails (= 4.1.7)
   react-rails (~> 1.0)
+  rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

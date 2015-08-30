@@ -6,3 +6,6 @@
 
 ## Start
 `rails s`
+
+## Test
+`bundle exec rspec`

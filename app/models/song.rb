@@ -1,6 +1,4 @@
 class Song < ActiveRecord::Base
-  include PgSearch
-  multisearchable against: :title
-
   belongs_to :album
+  delegate :artist, to: :album
 end
