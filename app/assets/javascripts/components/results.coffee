@@ -16,10 +16,12 @@
   render: ->
     React.DOM.div
       className: 'container'
-      React.DOM.h1
-        className: 'title'
-        'Welcome to database search'
-      React.createElement Search, populateResults: @populateResults
+      React.DOM.div
+        className: 'header'
+        React.DOM.h1
+          className: 'title'
+          'Welcome to database search'
+        React.createElement Search, populateResults: @populateResults
       React.DOM.div
         className: 'results row'
         @renderResults @state.results
