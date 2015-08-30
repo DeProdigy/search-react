@@ -35,14 +35,16 @@
     React.DOM.div
       className: 'row'
       React.DOM.form
+        id: 'search-form'
         className: 'form-inline col-sm-12'
         onSubmit: @handleSubmit
         React.DOM.div
           React.DOM.input
             onChange: @handleChange
             type: 'search'
+            id: 'search-input'
             className: 'search-input'
-            name: 'search'
+            name: 'Search Input'
             autoFocus: true
             placeholder: 'Search things here...'
             ref: 'search_input'
