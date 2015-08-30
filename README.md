@@ -4,6 +4,8 @@
 
 `rake db:setup`
 
+`rake db:seed`
+
 ## Start
 `rails s`
 
